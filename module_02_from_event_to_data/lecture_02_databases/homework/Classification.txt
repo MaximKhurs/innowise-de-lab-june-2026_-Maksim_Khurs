@@ -1,0 +1,8 @@
+1. Categories -> таблица с категориями товаров -> атрибуты: category_id, category_name(наименование категории);
+2. Cities -> города, где расположены магазины -> атрибуты: city_id, city_name (название города), zipcode, country_id(внешний ключ, в какой стране находится город);
+3. Countries -> страны, где расположены магазины -> атрибуты: country_id, country_name(название страны), country_code(код страны);
+4. Customers -> информация о покупателях -> атрибуты: customer_id, first_name (имя покупателя), middle_initial (инициал отчества), last_name (фамилия), city_id (внешний ключ, в каком городе проживает), address (адрес проживания);
+5. Emploeeys -> информация о сотрудниках -> атрибуты: employee_id, first_name (имя сотрудника) , middle_initial (инициал отчества), last_name (фамилия), birth_date (дата рождения), gender (пол) , city_id (в каком городе проживает) , shop_id (в каком магазине работает) , hire_date (дата найма);
+6. Products -> информация о товаре -> атрибуты: product_id, product_name (наименование товара), price (цена), category_id (к какой категории принадлежит товар), class (какой-то класс), modify_timestamp (последнее обновление информации), resistant (устойчивость к чему-то), is_allergic (содержит ли аллергены), vitality_days(срок годности);
+7. Sales -> данные по покупкам -> атрибуты: sales_id, employee_id (продавец), customer_id (покупатель), product_id (товар), quantity (количество), discount (скидка), total_price (итоговая цена), sales_timestamp (дата продажи), transaction_number (номер транзакции);
+8. Shops -> данные о магазинах -> атрибуты: shop_id, city_id (город, где расположен магазин), adress (адрес).
