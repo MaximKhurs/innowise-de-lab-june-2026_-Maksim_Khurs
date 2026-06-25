@@ -1,0 +1,12 @@
+1. Categories -> category_id
+2. Cities -> city_id
+3. Countries -> country_id
+4. Customers -> customer_id
+5. Employees -> employee_id
+6. Products -> product_id
+7. Sales -> sales_id
+8. Shops -> shop_id
+Обоснование выбора:
+В любой из таблиц первичным ключем является id, представляющий из себя уникально для каждой записи число.
+В случае с таблицей customers, имена, фамилии, и тому подобное может повторяться. В случае с categories,
+столбец category_name тоже является уникальным и ключ может быть составным, но мне кажется это избыточно.
