@@ -1,0 +1,8 @@
+1. Categories -> нет внешних ключей
+2. Cities -> country_id (связь с таблицей Countries)
+3. Countries -> нет внешних ключей
+4. Customers -> city_id (связь с таблицей Cities)
+5. Employees -> city_id (связь с таблицей Cities), shop_id (связь с таблицей Shops)
+6. Products -> category_id (связь с таблицей Categories)
+7. Sales -> employee_id (связь с таблицей Employees), customer_id(связь с таблицей Customers), product_id (связь с таблицей Products)
+8. Shops -> city_id (связь с таблицей Cities)
