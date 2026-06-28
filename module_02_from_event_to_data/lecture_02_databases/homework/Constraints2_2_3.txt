@@ -1,0 +1,26 @@
+1. Sales 
+1.1 Not NULL:
+    - sales_id - первичный ключ, не может быть NULL.
+    - product_id - если есть транзакция, значит должна быть информация что человек купил.
+    - quantity - количество не может быть NULL.
+    - total_price - итоговоя сумма также не может быть NULL.
+1.2 UNIQUE
+    - sales_id - первичный ключ должен быть уникальным
+    - transaction_number - номер транзакции также должен быть уникальным, не может быть 2 одинаковые транзакции.
+1.3 CHECK
+    - quantity - должно быть больше 0 
+    - total_price - должно быть больше 0 
+2. Products
+2.1 Not NULL:
+    - product_id - первичный ключ
+    - product_name - наименование товара также не может быть NULL
+    - price - цена не может быть NULL
+    - category_id 
+2.2 UNIQUE 
+    - product_id - первичный ключ
+    - product_name - я думаю товар по наименованию также должен отличаться
+2.3 CHECK
+    - price - больше 0
+    - resistant in ('Yes', 'No')
+    - is_allergic in ('Yex', 'No')
+    - vitality_days ???
