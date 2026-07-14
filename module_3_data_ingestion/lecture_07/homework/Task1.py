@@ -1,0 +1,9 @@
+center_coords = (40.7128, -74.0060)
+
+#center_coords[0] = 1
+#print(center_coords)
+
+print(f'Coordinates of the location of the central warehouse: {center_coords[0]} , {center_coords[1]}')
+
+print(type(center_coords))
+print(len(center_coords))
