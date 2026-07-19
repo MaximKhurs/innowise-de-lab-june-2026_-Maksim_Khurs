@@ -1,0 +1,43 @@
+version: "3.9" # Версия синтаксиса Docker Compose
+
+services:
+  # раздел, где описываются контейнеры
+  postgres:
+    # имя сервиса (можно назвать иначе)
+    image: postgres:16 # официальный образ, который скачивается из Docker Hub
+    container_name: postgres_db # Фиксированное имя контейнера. Иначе Docker создаёт случайное имя
+    restart: unless-stopped # Перезапустится при падении или после перезагрузки системы, но НЕ запустится, если вы вручную остановили его
+
+    env_file:
+      - .env # Подключает файл .env.
+
+    environment:
+      # Передаёт переменные внутрь контейнера из .env
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+      POSTGRES_DB: ${POSTGRES_DB}
+
+    ports:
+      # HOST_PORT — порт на вашем ПК, 5432 — порт внутри контейнера
+      - "${POSTGRES_PORT}:5432"
+
+    #  /var/lib/postgresql/data — где PostgreSQL хранит данные
+    # postgres_data — именованный Docker volume
+    # Без volume данные удалятся при удалении контейнера.
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+    # Проверяет, готова ли база к подключению
+    # interval: проверка каждые 10 секунд
+    # timeout: ждать максимум 5 секунд
+    # retries: 5 попыток
+    healthcheck:
+      test: [ "CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}" ]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+# Создаёт именованный volume
+volumes:
+  postgres_data:
+
