@@ -216,3 +216,9 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# Папка с данными (большие файлы)
+data/
+*.csv
+*.xlsx
+*.parquet
